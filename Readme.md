@@ -1,5 +1,36 @@
 
-# char-rnn
+# char-rnn-truecaser
+
+Code for the EMNLP'16 paper: Learning to Capitalize with Character-Level Recurrent Neural Networks: An Empirical Study. This is a fork from Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn), modified for truecasing.
+
+## Running the code
+
+Install luautf8 for unicode support in Lua:
+
+```
+luarocks install luautf8
+```
+
+Scripts for training and evaluation are provided. They can be run as follows:
+
+```
+bash (train|test).sh <corpus> (lstm|gru) (small|large) <gpuid>
+```
+
+`<corpus>` is one of the following: `wiki`, `wsj`, `conll_eng`, `conll_deu`. Data splits should be put in `data/<corpus>` and named: `input.txt` (train), `val_input.txt` (tune), `test_lower.txt` (test, lowercased). Only Wikipedia data is uploaded (same splits as [William Coster and David Kauchak (2011)](http://www.cs.pomona.edu/~dkauchak/simplification/data.v1/data.v1.split.tar.gz)). The remaining datasets should be obtained from their respective sources in LDC.  For example, issue the following commands to train and evaluate LSTM-Large on Wikipedia using GPU0:
+
+```
+bash train.sh wiki lstm large 0
+bash test.sh wiki lstm large 0
+```
+
+The truecased file can be found in `cv/wiki_lstm_700hidden_3layer/output.txt`. For evaluation, use `word_eval.py` to compute accuracy and F1-score:
+
+```
+python word_eval.py <gold file> <output file>
+```
+
+# char-rnn (original docs)
 
 This code implements **multi-layer Recurrent Neural Network** (RNN, LSTM, and GRU) for training/sampling from character-level language models. In other words the model takes one text file as input and trains a Recurrent Neural Network that learns to predict the next character in a sequence. The RNN can then be used to genrate text character by character that will look like the original training data. The context of this code base is described in detail in my [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
 
