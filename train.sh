@@ -29,7 +29,7 @@ layer=2
 if [ $size = "large" ]; then
   rnn=700
   layer=3
-  if [ $model = "gru"]; then
+  if [ $model = "gru" ]; then
     learning_rate=0.001
   fi
 fi

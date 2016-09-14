@@ -5,7 +5,7 @@ Code for the EMNLP'16 paper: Learning to Capitalize with Character-Level Recurre
 
 ## Running the code
 
-Install luautf8 for unicode support in Lua:
+Install `luautf8` for unicode support in Lua:
 
 ```
 luarocks install luautf8
