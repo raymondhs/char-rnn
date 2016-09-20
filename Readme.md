@@ -1,5 +1,4 @@
-
-# char-rnn-truecaser
+# char-rnn-truecase
 
 Code for the EMNLP'16 paper: Learning to Capitalize with Character-Level Recurrent Neural Networks: An Empirical Study. This is a fork from Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn), modified for truecasing.
 
