@@ -215,8 +215,8 @@ while (seed_text ~= '') do
       if strlen > 0 then
         bb = beamLastChar[cc]
         if vocab[ bb ] == nil then
-            prev_char = torch.Tensor{vocab[UNK]}
-            prev_chars[cnt] = vocab[UNK]
+            prev_char = torch.Tensor{vocab["<unk>"]}
+            prev_chars[cnt] = vocab["<unk>"]
         else
             prev_char = torch.Tensor{ vocab[ bb ] }
             prev_chars[cnt] = vocab[bb]
@@ -255,7 +255,7 @@ while (seed_text ~= '') do
       for jj = 1,#candidates do
         c = candidates[jj]
         this_char = torch.Tensor{vocab[c]}
-        if vocab[c] == nil then this_char = torch.Tensor{vocab[UNK]} end
+        if vocab[c] == nil then this_char = torch.Tensor{vocab["<unk>"]} end
         
         if prev_char ~= nil then
           if this_char ~= nil then
