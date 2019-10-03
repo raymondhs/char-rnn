@@ -2,6 +2,8 @@
 
 Code for the EMNLP'16 paper: Learning to Capitalize with Character-Level Recurrent Neural Networks: An Empirical Study. This is a fork from Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn), modified for truecasing.
 
+**Update:** PyTorch version is also available in this [repo](https://github.com/raymondhs/pytorch-char-rnn-truecase).
+
 ## Running the code
 
 Install `luautf8` for unicode support in Lua:
